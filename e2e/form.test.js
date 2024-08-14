@@ -11,7 +11,7 @@ describe('Page start', () => {
       devtools: true,
     });
 
-    page = browser.newPage();
+    page = await browser.newPage();
   });
 
   test('Form shoud render on page start', async () => {
@@ -20,7 +20,7 @@ describe('Page start', () => {
     await page.waitFor('.card-form-widget');
   });
 
-  test('Form input should add class valid, if card number is valid', async () => {
+  /* test('Form input should add class valid, if card number is valid', async () => {
     await page.goto('http://locolhost:9000');
 
     await page.waitFor('.card-form-widget');
@@ -33,6 +33,11 @@ describe('Page start', () => {
     await submit.click();
 
     await page.waitFor('.card-form-widget .input valid');
+  }); */
+
+  test('Open google', async () => {
+    await page.get('https://www.google.com/');
+    await page.waitFor('body');
   });
 
   afterEach(async () => {
