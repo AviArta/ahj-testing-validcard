@@ -4,8 +4,7 @@
   "description": "Simple card-numbers validation service",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development",
-    "st": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
     "lint": "eslint . --fix",
     "test": "jest --testPathPattern=./src/",

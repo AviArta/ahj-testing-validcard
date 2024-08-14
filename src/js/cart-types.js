@@ -1,4 +1,7 @@
-export default const cardsTypes = [
+/* eslint-disable import/prefer-default-export */
+/* eslint linebreak-style: ["error", "windows"] */
+
+export const cardsTypes = [
   {
     type: 'visa',
     patterns: [4],

@@ -1,4 +1,4 @@
-import class CardFormWidget {
+export class CardFormWidget {
   constructor(parentElement) {
     this.parentElement = parentElement;
 
@@ -56,11 +56,11 @@ import class CardFormWidget {
     this.submit = this.element.querySelector(CardFormWidget.submitSelector);
     this.input = this.element.querySelector(CardFormWidget.inputSelector);
 
-    this.element.addEventListener("submit", () => this.onSubmit);
+    this.element.addEventListener('submit', () => this.onSubmit);
+  }
 
-    onSubmit(e) {
-      e.preventDefault();
-      console.log('Submit');
-    };
+  onSubmit(e) {
+    e.preventDefault();
+    console.log('Submit');
   }
 }
