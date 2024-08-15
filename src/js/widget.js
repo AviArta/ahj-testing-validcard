@@ -1,6 +1,10 @@
-export class CardFormWidget {
-  constructor(parentElement) {
-    this.parentElement = parentElement;
+/* eslint-disable class-methods-use-this */
+/* eslint linebreak-style: ["error", "windows"] */
+import isValid from './validator';
+
+export default class CardFormWidget {
+  constructor(parentEl) {
+    this.parentEl = parentEl;
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -31,10 +35,11 @@ export class CardFormWidget {
         </ul>
         <div class="form-control">
             <label for="card-number-input"></label>
-            <input id="input" type="text" placeholder="Credit card number">
+            <input class="input" type="text" placeholder="Credit card number">
         </div>
         <button class="submit">Click to validate</button>
-      </form>`;
+      </form>
+    `;
   }
 
   static get selector() {
@@ -42,7 +47,7 @@ export class CardFormWidget {
   }
 
   static get inputSelector() {
-    return '.input';
+    return '#input';
   }
 
   static get submitSelector() {
@@ -61,6 +66,15 @@ export class CardFormWidget {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log('Submit');
+
+    let value = this.input.value;
+
+    if (isValid(value)) {
+      this.input.classList.add('valid');
+      this.input.classList.remove('invalid');
+    } else {
+      this.input.classList.add('invalid');
+      this.input.classList.remove('valid');
+    }
   }
 }
