@@ -47,7 +47,7 @@ export default class CardFormWidget {
   }
 
   static get inputSelector() {
-    return '#input';
+    return '.input';
   }
 
   static get submitSelector() {
