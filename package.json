@@ -45,6 +45,7 @@
   "dependencies": {
     "card-validator": "^9.1.0",
     "core-js": "^3.36.1",
+    "server": "^1.0.39",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
   }
